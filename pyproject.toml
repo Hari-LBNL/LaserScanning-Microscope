@@ -16,4 +16,5 @@ dependencies = [
     "pyserial>=3.5",
     "pyvisa>=1.16.2",
     "qtconsole>=5.7.2",
+    "qtpy>=2.4.3",
 ]

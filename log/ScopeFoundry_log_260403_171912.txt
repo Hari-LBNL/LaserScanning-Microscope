@@ -1,0 +1,6 @@
+2026-04-03T17:19:12|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 10, in <module>
+    app.exec()
+    ^^^^^^^^
+AttributeError: 'LaserScanningApp' object has no attribute 'exec'. Did you mean: 'exec_'?
+

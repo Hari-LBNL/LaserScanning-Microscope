@@ -872,6 +872,7 @@ dependencies = [
     { name = "pyserial" },
     { name = "pyvisa" },
     { name = "qtconsole" },
+    { name = "qtpy" },
 ]
 
 [package.metadata]
@@ -887,6 +888,7 @@ requires-dist = [
     { name = "pyserial", specifier = ">=3.5" },
     { name = "pyvisa", specifier = ">=1.16.2" },
     { name = "qtconsole", specifier = ">=5.7.2" },
+    { name = "qtpy", specifier = ">=2.4.3" },
 ]
 
 [[package]]

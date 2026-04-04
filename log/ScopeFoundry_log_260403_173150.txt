@@ -1,0 +1,1 @@
+2026-04-03T17:32:20|INFO|LaserScanningApp|on_close
