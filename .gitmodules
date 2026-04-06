@@ -1,3 +1,9 @@
 [submodule "ScopeFoundry"]
 	path = ScopeFoundry
 	url = https://github.com/ScopeFoundry/ScopeFoundry.git
+[submodule "ScopeFoundryHW/mcp_server"]
+	path = ScopeFoundryHW/mcp_server
+	url = https://github.com/ScopeFoundry/HW_mcp_server
+[submodule "ScopeFoundryHW/session_manager"]
+	path = ScopeFoundryHW/session_manager
+	url = https://github.com/ScopeFoundry/HW_session_manager
