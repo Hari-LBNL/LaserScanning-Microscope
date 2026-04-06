@@ -1,0 +1,3 @@
+2026-04-03T18:39:58|ERROR|MCPServerHardware|MCP Server error: Event loop stopped before Future completed.
+2026-04-03T18:40:01|INFO|LaserScanningApp|on_close
+2026-04-03T18:40:01|INFO|LaserScanningApp|disconnecting mcp_server
