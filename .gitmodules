@@ -7,3 +7,6 @@
 [submodule "ScopeFoundryHW/session_manager"]
 	path = ScopeFoundryHW/session_manager
 	url = https://github.com/ScopeFoundry/HW_session_manager
+[submodule "ScopeFoundryHW/asi_stage"]
+	path = ScopeFoundryHW/asi_stage
+	url = https://github.com/ScopeFoundry/HW_asi_stage
