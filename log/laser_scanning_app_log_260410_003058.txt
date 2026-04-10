@@ -1,0 +1,78 @@
+2026-04-10T00:30:59|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 39, in <module>
+    app = LaserScanningApp(sys.argv)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 94, in __init__
+    self._setup_ui_mdi_area()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 252, in _setup_ui_mdi_area
+    ui = self.load_measure_ui(measure)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 389, in load_measure_ui
+    measure.setup_figure()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_control_measure.py", line 105, in setup_figure
+    self.ui = load_qt_ui_file(sibling_path(__file__, 'mcl_microstage_control.ui'))
+              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\helper_funcs.py", line 91, in load_qt_ui_file
+    ui = uic.loadUi(ui_filename)
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\load_ui.py", line 86, in loadUi
+    return DynamicUILoader(package).loadUi(uifile, baseinstance)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\Loader\loader.py", line 62, in loadUi
+    return self.parse(filename)
+           ~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 1014, in parse
+    self._handle_widget(ui_file.widget)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 842, in _handle_widget
+    self.traverseWidgetTree(el)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 818, in traverseWidgetTree
+    handler(self, child)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 512, in createLayout
+    self.traverseWidgetTree(elem)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 818, in traverseWidgetTree
+    handler(self, child)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 555, in handleItem
+    self.traverseWidgetTree(elem)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 818, in traverseWidgetTree
+    handler(self, child)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 280, in createWidget
+    self.traverseWidgetTree(elem)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 818, in traverseWidgetTree
+    handler(self, child)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 512, in createLayout
+    self.traverseWidgetTree(elem)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 818, in traverseWidgetTree
+    handler(self, child)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 555, in handleItem
+    self.traverseWidgetTree(elem)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 818, in traverseWidgetTree
+    handler(self, child)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 512, in createLayout
+    self.traverseWidgetTree(elem)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 818, in traverseWidgetTree
+    handler(self, child)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 555, in handleItem
+    self.traverseWidgetTree(elem)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 818, in traverseWidgetTree
+    handler(self, child)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 524, in createLayout
+    top_layout.addLayout(layout, *lp)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TypeError: addLayout(self, layout: QLayout|None, stretch: int = 0): too many arguments
+

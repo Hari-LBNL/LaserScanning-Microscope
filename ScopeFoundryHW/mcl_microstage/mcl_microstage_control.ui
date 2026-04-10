@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>320</width><height>500</height></rect>
+  </property>
+  <property name="maximumSize"><size><width>360</width><height>16777215</height></size></property>
+  <property name="windowTitle"><string>MCL Microstage Control</string></property>
+  <layout class="QVBoxLayout" name="mainLayout">
+
+   <!-- Header -->
+   <item>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <widget class="QLabel" name="label_title">
+       <property name="text"><string>MCL Microstage</string></property>
+       <property name="font"><font><pointsize>13</pointsize><bold>true</bold></font></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="mcl_connect_checkBox">
+       <property name="text"><string>Connect</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <!-- XY Group -->
+   <item>
+    <widget class="QGroupBox" name="xy_groupBox">
+     <property name="title"><string>XY Control</string></property>
+     <layout class="QVBoxLayout" name="xy_vbox">
+
+      <!-- Jog pad + step in one flat grid -->
+      <item>
+       <layout class="QGridLayout" name="jog_grid">
+        <item row="0" column="1">
+         <widget class="QPushButton" name="y_up_pushButton">
+          <property name="text"><string>^</string></property>
+          <property name="minimumSize"><size><width>60</width><height>50</height></size></property>
+          <property name="maximumSize"><size><width>60</width><height>50</height></size></property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="x_down_pushButton">
+          <property name="text"><string>&lt;--</string></property>
+          <property name="minimumSize"><size><width>60</width><height>50</height></size></property>
+          <property name="maximumSize"><size><width>60</width><height>50</height></size></property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="x_up_pushButton">
+          <property name="text"><string>--&gt;</string></property>
+          <property name="minimumSize"><size><width>60</width><height>50</height></size></property>
+          <property name="maximumSize"><size><width>60</width><height>50</height></size></property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="y_down_pushButton">
+          <property name="text"><string>v</string></property>
+          <property name="minimumSize"><size><width>60</width><height>50</height></size></property>
+          <property name="maximumSize"><size><width>60</width><height>50</height></size></property>
+         </widget>
+        </item>
+        <!-- Step: label in row 0, spinbox in row 1 — naturally close, sized by button rows -->
+        <item row="0" column="3">
+         <widget class="QLabel">
+          <property name="text"><string>Step (mm)</string></property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QDoubleSpinBox" name="xy_step_doubleSpinBox">
+          <property name="maximumSize"><size><width>85</width><height>16777215</height></size></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+      <!-- Position / Target / Velocity form -->
+      <item>
+       <widget class="QGroupBox" name="pos_groupBox">
+        <property name="title"><string>Position / Target</string></property>
+        <layout class="QGridLayout" name="gridLayout_pos">
+
+         <!-- X row -->
+         <item row="0" column="0">
+          <widget class="QLabel"><property name="text"><string>X (mm)</string></property></widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QDoubleSpinBox" name="x_pos_doubleSpinBox">
+           <property name="readOnly"><bool>true</bool></property>
+           <property name="buttonSymbols"><enum>QAbstractSpinBox::NoButtons</enum></property>
+           <property name="decimals"><number>4</number></property>
+           <property name="maximumSize"><size><width>95</width><height>16777215</height></size></property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLineEdit" name="x_target_lineEdit">
+           <property name="placeholderText"><string>target + Enter</string></property>
+           <property name="maximumSize"><size><width>100</width><height>16777215</height></size></property>
+          </widget>
+         </item>
+
+         <!-- Y row -->
+         <item row="1" column="0">
+          <widget class="QLabel"><property name="text"><string>Y (mm)</string></property></widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QDoubleSpinBox" name="y_pos_doubleSpinBox">
+           <property name="readOnly"><bool>true</bool></property>
+           <property name="buttonSymbols"><enum>QAbstractSpinBox::NoButtons</enum></property>
+           <property name="decimals"><number>4</number></property>
+           <property name="maximumSize"><size><width>95</width><height>16777215</height></size></property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="y_target_lineEdit">
+           <property name="placeholderText"><string>target + Enter</string></property>
+           <property name="maximumSize"><size><width>100</width><height>16777215</height></size></property>
+          </widget>
+         </item>
+
+         <!-- Velocity row -->
+         <item row="2" column="0">
+          <widget class="QLabel"><property name="text"><string>Vel (mm/s)</string></property></widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDoubleSpinBox" name="velocity_doubleSpinBox">
+           <property name="maximumSize"><size><width>95</width><height>16777215</height></size></property>
+          </widget>
+         </item>
+
+        </layout>
+       </widget>
+      </item>
+
+      <!-- Stop / Reset / Limit row -->
+      <item>
+       <layout class="QHBoxLayout" name="ctrl_row">
+        <item>
+         <widget class="QPushButton" name="stop_pushButton">
+          <property name="text"><string>STOP</string></property>
+          <property name="maximumSize"><size><width>80</width><height>16777215</height></size></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="reset_encoders_pushButton">
+          <property name="text"><string>Reset Encoders</string></property>
+          <property name="maximumSize"><size><width>120</width><height>16777215</height></size></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="limit_indicator_label">
+          <property name="text"><string>  LIMIT  </string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+          <property name="maximumSize"><size><width>70</width><height>22</height></size></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+   <!-- Calibration Group -->
+   <item>
+    <widget class="QGroupBox" name="cal_groupBox">
+     <property name="title"><string>Calibration</string></property>
+     <layout class="QVBoxLayout" name="cal_vbox">
+
+      <item>
+       <layout class="QHBoxLayout" name="cal_btn_row">
+        <item>
+         <widget class="QPushButton" name="calibrate_pushButton">
+          <property name="text"><string>Start Calibration</string></property>
+          <property name="maximumSize"><size><width>120</width><height>16777215</height></size></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="stop_cal_pushButton">
+          <property name="text"><string>Stop</string></property>
+          <property name="enabled"><bool>false</bool></property>
+          <property name="maximumSize"><size><width>60</width><height>16777215</height></size></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+      <item>
+       <widget class="QProgressBar" name="cal_progressBar">
+        <property name="value"><number>0</number></property>
+       </widget>
+      </item>
+
+      <item>
+       <widget class="QLabel" name="cal_status_label">
+        <property name="text"><string>Ready</string></property>
+       </widget>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

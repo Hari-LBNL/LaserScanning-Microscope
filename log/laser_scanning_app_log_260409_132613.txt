@@ -1,0 +1,74 @@
+2026-04-09T13:26:46|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_control_measure.py", line 59, in y_up
+    self.stage.settings['y_target'] += self.settings['jog_step_xy']
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\logged_quantity\collection.py", line 219, in __setitem__
+    self._logged_quantities[key].update_value(item)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\logged_quantity\logged_quantity.py", line 278, in update_value
+    self.hardware_set_func(self.val)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 80, in <lambda>
+    write_func=lambda v: self.stage.move_y(-v if S['invert_y'] else v, S['velocity']))
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_dev.py", line 108, in move_y
+    self.move_rel_y(delta, velocity)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_dev.py", line 92, in move_rel_y
+    self._dev.move(self.axis_y, v, delta_mm, self.handle)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Mad City Labs\MicroDrive\API\Python\MCL_MicroDrive_Wrapper.py", line 556, in move
+    raise MCL_MD_Exceptions(err)
+MCL_MicroDrive_Wrapper.MCL_MD_Exceptions: MCL Usage Error occurred: -5
+
+2026-04-09T13:26:50|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_control_measure.py", line 62, in y_down
+    self.stage.settings['y_target'] -= self.settings['jog_step_xy']
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\logged_quantity\collection.py", line 219, in __setitem__
+    self._logged_quantities[key].update_value(item)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\logged_quantity\logged_quantity.py", line 278, in update_value
+    self.hardware_set_func(self.val)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 80, in <lambda>
+    write_func=lambda v: self.stage.move_y(-v if S['invert_y'] else v, S['velocity']))
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_dev.py", line 108, in move_y
+    self.move_rel_y(delta, velocity)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_dev.py", line 92, in move_rel_y
+    self._dev.move(self.axis_y, v, delta_mm, self.handle)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Mad City Labs\MicroDrive\API\Python\MCL_MicroDrive_Wrapper.py", line 556, in move
+    raise MCL_MD_Exceptions(err)
+MCL_MicroDrive_Wrapper.MCL_MD_Exceptions: MCL Usage Error occurred: -5
+
+2026-04-09T13:26:53|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_control_measure.py", line 62, in y_down
+    self.stage.settings['y_target'] -= self.settings['jog_step_xy']
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\logged_quantity\collection.py", line 219, in __setitem__
+    self._logged_quantities[key].update_value(item)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\logged_quantity\logged_quantity.py", line 278, in update_value
+    self.hardware_set_func(self.val)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 80, in <lambda>
+    write_func=lambda v: self.stage.move_y(-v if S['invert_y'] else v, S['velocity']))
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_dev.py", line 108, in move_y
+    self.move_rel_y(delta, velocity)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_dev.py", line 92, in move_rel_y
+    self._dev.move(self.axis_y, v, delta_mm, self.handle)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Mad City Labs\MicroDrive\API\Python\MCL_MicroDrive_Wrapper.py", line 556, in move
+    raise MCL_MD_Exceptions(err)
+MCL_MicroDrive_Wrapper.MCL_MD_Exceptions: MCL Usage Error occurred: -5
+
+2026-04-09T13:29:46|INFO|LaserScanningApp|on_close
+2026-04-09T13:29:46|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-09T13:29:46|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-09T13:29:46|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-09T13:29:46|INFO|LaserScanningApp|disconnecting asi_stage

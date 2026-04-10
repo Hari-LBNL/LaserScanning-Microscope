@@ -1,0 +1,22 @@
+2026-04-10T00:20:28|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\logged_quantity\logged_quantity.py", line 278, in update_value
+    self.hardware_set_func(self.val)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 80, in <lambda>
+    write_func=lambda v: self.stage.move_x(v, S['velocity']))
+                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_dev.py", line 110, in move_x
+    self.move_rel_x(delta, velocity)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_dev.py", line 91, in move_rel_x
+    self._dev.move(self.axis_x, v, physical_delta, self.handle)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Mad City Labs\MicroDrive\API\Python\MCL_MicroDrive_Wrapper.py", line 556, in move
+    raise MCL_MD_Exceptions(err)
+MCL_MicroDrive_Wrapper.MCL_MD_Exceptions: MCL Argument Error occurred: -6
+
+2026-04-10T00:21:44|INFO|LaserScanningApp|on_close
+2026-04-10T00:21:44|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-10T00:21:44|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-10T00:21:44|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-10T00:21:44|INFO|LaserScanningApp|disconnecting asi_stage

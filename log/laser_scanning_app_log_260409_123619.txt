@@ -1,0 +1,27 @@
+2026-04-09T12:36:31|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 113, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 101, in enable_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 53, in connect
+    self.stage = MCLMicrostage(serial_num=serial, debug=S['debug_mode'])
+                 ^^^^^^^^^^^^^
+NameError: name 'MCLMicrostage' is not defined. Did you mean: 'MCLMicrostageHW'?
+
+2026-04-09T12:37:05|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 113, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 101, in enable_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 53, in connect
+    self.stage = MCLMicrostage(serial_num=serial, debug=S['debug_mode'])
+                 ^^^^^^^^^^^^^
+NameError: name 'MCLMicrostage' is not defined. Did you mean: 'MCLMicrostageHW'?
+
+2026-04-09T12:39:09|INFO|LaserScanningApp|on_close
+2026-04-09T12:39:10|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-09T12:39:10|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-09T12:39:10|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-09T12:39:10|INFO|LaserScanningApp|disconnecting asi_stage

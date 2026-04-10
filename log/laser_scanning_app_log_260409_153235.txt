@@ -1,0 +1,11 @@
+2026-04-09T23:53:44|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-09T23:53:52|INFO|LaserScanningApp|on_close
+2026-04-09T23:53:52|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-09T23:53:52|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-09T23:53:52|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-09T23:53:52|INFO|LaserScanningApp|disconnecting asi_stage

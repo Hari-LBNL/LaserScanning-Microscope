@@ -1,0 +1,21 @@
+2026-04-08T17:24:39|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 32, in <module>
+    app = LaserScanningApp(sys.argv)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 88, in __init__
+    self.setup()
+    ~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 23, in setup
+    asi_stage = self.add_hardware(ASIStageHW)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 473, in add_hardware
+    hw = hw(app=self)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 33, in __init__
+    HardwareComponent.__init__(self, app, debug=debug, name=name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 79, in __init__
+    self.setup()
+    ~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 70, in setup
+    self.update_timer = QtCore.QTimer(self)
+                        ~~~~~~~~~~~~~^^^^^^
+TypeError: QTimer(parent: QObject|None = None): argument 1 has unexpected type 'ASIStageHW'
+

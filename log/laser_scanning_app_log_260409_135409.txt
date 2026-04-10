@@ -1,0 +1,59 @@
+2026-04-09T13:56:04|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 263, in _thread_run
+    self.set_progress(0.0)  # set progress bars back to zero
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 305, in set_progress
+    self.subwin.setWindowTitle(text)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'setWindowTitle'
+
+2026-04-09T13:56:04|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 235, in _call_post_run
+    self.run_state.update_value(self.end_state)
+                                ^^^^^^^^^^^^^^
+AttributeError: 'MCLMicrostageCalibration' object has no attribute 'end_state'. Did you mean: 'run_state'?
+
+2026-04-09T13:56:41|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 263, in _thread_run
+    self.set_progress(0.0)  # set progress bars back to zero
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 305, in set_progress
+    self.subwin.setWindowTitle(text)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'setWindowTitle'
+
+2026-04-09T13:56:41|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 235, in _call_post_run
+    self.run_state.update_value(self.end_state)
+                                ^^^^^^^^^^^^^^
+AttributeError: 'MCLMicrostageCalibration' object has no attribute 'end_state'. Did you mean: 'run_state'?
+
+2026-04-09T13:56:50|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 38, in run
+    self.measurement._thread_run()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 263, in _thread_run
+    self.set_progress(0.0)  # set progress bars back to zero
+    ~~~~~~~~~~~~~~~~~^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 305, in set_progress
+    self.subwin.setWindowTitle(text)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'setWindowTitle'
+
+2026-04-09T13:56:50|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\measurement.py", line 235, in _call_post_run
+    self.run_state.update_value(self.end_state)
+                                ^^^^^^^^^^^^^^
+AttributeError: 'MCLMicrostageCalibration' object has no attribute 'end_state'. Did you mean: 'run_state'?
+
+2026-04-09T13:58:41|INFO|LaserScanningApp|on_close
+2026-04-09T13:58:41|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-09T13:58:41|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-09T13:58:41|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-09T13:58:41|INFO|LaserScanningApp|disconnecting asi_stage

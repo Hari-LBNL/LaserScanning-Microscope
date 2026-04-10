@@ -1,0 +1,10 @@
+2026-04-08T16:29:57|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\qtconsole\console_widget.py", line 426, in eventFilter
+    def eventFilter(self, obj, event):
+    
+KeyboardInterrupt
+
+2026-04-08T16:33:07|ERROR|MCPServerHardware|MCP Server error: Event loop stopped before Future completed.
+2026-04-08T16:38:13|INFO|LaserScanningApp|on_close
+2026-04-08T16:38:13|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-08T16:38:13|INFO|LaserScanningApp|disconnecting git_session_manager

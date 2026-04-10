@@ -1,0 +1,17 @@
+2026-04-09T12:39:15|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 37, in <module>
+    app = LaserScanningApp(sys.argv)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 88, in __init__
+    self.setup()
+    ~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 22, in setup
+    from ScopeFoundryHW.mcl_microstage.mcl_microstage_hw import MCLMicrostageHW
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\__init__.py", line 1, in <module>
+    from .mcl_microstage_hw import MCLMicrostageHW
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 4, in <module>
+    from .mcl_microstage_dev import MCLMicrostage
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_dev.py", line 11, in <module>
+    from MCL_MicroDrive_Wrapper import MCL_Microdrive, MCL_MD_Exceptions  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'MCL_MicroDrive_Wrapper'
+

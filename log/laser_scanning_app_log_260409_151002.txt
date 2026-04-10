@@ -1,0 +1,46 @@
+2026-04-09T15:10:03|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 39, in <module>
+    app = LaserScanningApp(sys.argv)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 94, in __init__
+    self._setup_ui_mdi_area()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 252, in _setup_ui_mdi_area
+    ui = self.load_measure_ui(measure)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 389, in load_measure_ui
+    measure.setup_figure()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_control_measure.py", line 158, in setup_figure
+    self.ui = load_qt_ui_file(sibling_path(__file__, 'mcl_microstage_control.ui'))
+              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\helper_funcs.py", line 91, in load_qt_ui_file
+    ui = uic.loadUi(ui_filename)
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\load_ui.py", line 86, in loadUi
+    return DynamicUILoader(package).loadUi(uifile, baseinstance)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\Loader\loader.py", line 62, in loadUi
+    return self.parse(filename)
+           ~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 1014, in parse
+    self._handle_widget(ui_file.widget)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 842, in _handle_widget
+    self.traverseWidgetTree(el)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 818, in traverseWidgetTree
+    handler(self, child)
+    ~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 510, in createLayout
+    self._setupObject(classname, parent, elem,
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+            parent_is_optional=False))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\uiparser.py", line 237, in _setupObject
+    self.wprops.setProperties(obj, branch)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\PyQt6\uic\properties.py", line 432, in setProperties
+    getattr(widget, 'set%s%s' % (ascii_upper(prop_name[0]), prop_name[1:]))(prop_value)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: arguments did not match any overloaded call:
+  setContentsMargins(self, left: int, top: int, right: int, bottom: int): argument 1 has unexpected type 'QRect'
+  setContentsMargins(self, margins: QMargins): argument 1 has unexpected type 'QRect'
+
