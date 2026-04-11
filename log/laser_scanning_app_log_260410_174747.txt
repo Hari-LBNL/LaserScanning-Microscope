@@ -1,0 +1,31 @@
+2026-04-10T17:48:07|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 113, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 101, in enable_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd.py", line 320, in connect
+    self.set_readout()
+    ~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd.py", line 374, in set_readout
+    self.ccd_dev.set_ro_image_mode(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+                                     self.roi_img_hbin.val,
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+                                     self.roi_img_vstart.val,
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+                                     self.roi_img_vend.val)
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd_interface.py", line 309, in set_ro_image_mode
+    assert vend > vstart
+           ^^^^^^^^^^^^^
+AssertionError
+
+2026-04-10T17:48:12|INFO|LaserScanningApp|on_close
+2026-04-10T17:48:12|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-10T17:48:12|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-10T17:48:12|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-10T17:48:12|INFO|LaserScanningApp|disconnecting asi_stage
+2026-04-10T17:48:12|INFO|LaserScanningApp|disconnecting acton_spectrometer
+2026-04-10T17:48:12|INFO|LaserScanningApp|disconnecting andor_ccd

@@ -1,0 +1,5 @@
+2026-04-10T17:04:26|INFO|LaserScanningApp|on_close
+2026-04-10T17:04:26|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-10T17:04:26|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-10T17:04:26|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-10T17:04:26|INFO|LaserScanningApp|disconnecting asi_stage

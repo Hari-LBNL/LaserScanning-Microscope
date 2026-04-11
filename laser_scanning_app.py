@@ -29,6 +29,12 @@ class LaserScanningApp(BaseMicroscopeApp):
         from ScopeFoundryHW.asi_stage.asi_stage_control_measure import ASIStageControlMeasure
         asi_control = self.add_measurement(ASIStageControlMeasure(self))
 
+        from ScopeFoundryHW.acton_spec.acton_spec import ActonSpectrometerHW
+        self.add_hardware(ActonSpectrometerHW(self))
+
+        from ScopeFoundryHW.andor_camera.andor_ccd import AndorCCDHW
+        self.add_hardware(AndorCCDHW(self))
+
 
         
 
