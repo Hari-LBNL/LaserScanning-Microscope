@@ -10,3 +10,9 @@
 [submodule "ScopeFoundryHW/asi_stage"]
 	path = ScopeFoundryHW/asi_stage
 	url = https://github.com/ScopeFoundry/HW_asi_stage
+[submodule "ScopeFoundryHW/acton_spec"]
+	path = ScopeFoundryHW/acton_spec
+	url = https://github.com/ScopeFoundry/HW_acton_spec
+[submodule "ScopeFoundryHW/andor_camera"]
+	path = ScopeFoundryHW/andor_camera
+	url = https://github.com/ScopeFoundry/HW_andor_camera
