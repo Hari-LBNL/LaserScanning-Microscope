@@ -21,3 +21,4 @@
                ^^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'int' object has no attribute 'splitlines'
 
+2026-04-13T19:17:31|WARNING|GitSessionManagerHW|Measurement andor_ccd_readout starting without an active session
