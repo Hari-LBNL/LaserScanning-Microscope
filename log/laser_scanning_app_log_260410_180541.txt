@@ -1,0 +1,96 @@
+2026-04-10T18:05:54|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 113, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 101, in enable_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd.py", line 320, in connect
+    self.set_readout()
+    ~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd.py", line 374, in set_readout
+    self.ccd_dev.set_ro_image_mode(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+                                     self.roi_img_hbin.val,
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+                                     self.roi_img_vstart.val,
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+                                     self.roi_img_vend.val)
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd_interface.py", line 309, in set_ro_image_mode
+    assert vend > vstart
+           ^^^^^^^^^^^^^
+AssertionError
+
+2026-04-10T18:20:44|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:19:21|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 102, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:04|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:37|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 102, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:39|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:39|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:39|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:39|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:40|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:40|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:40|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-13T18:20:40|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\asi_stage\asi_stage_hw.py", line 211, in on_update_timer
+    def on_update_timer(self):
+    
+KeyboardInterrupt
+

@@ -1,0 +1,23 @@
+2026-04-13T19:15:05|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 113, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 101, in enable_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\acton_spec\acton_spec.py", line 65, in connect
+    self.acton_spectrometer = ActonSpectrometer(port=self.settings['port'],
+                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                echo=self.settings['echo'],
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                debug=self.settings['debug_mode'],
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                dummy=False)
+                                                ^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\acton_spec\acton_spec_interface.py", line 26, in __init__
+    self.read_grating_info()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\acton_spec\acton_spec_interface.py", line 72, in read_grating_info
+    gratings = grating_string.splitlines()[1:-1] # needed for echo
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'splitlines'
+

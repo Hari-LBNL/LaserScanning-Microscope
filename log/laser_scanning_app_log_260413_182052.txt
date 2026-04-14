@@ -1,0 +1,50 @@
+2026-04-13T18:20:53|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 50, in <module>
+    app = LaserScanningApp(sys.argv)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 88, in __init__
+    self.setup()
+    ~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 16, in setup
+    from ScopeFoundryHW.mcp_server.mcp_server_hw import MCPServerHardware
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcp_server\mcp_server_hw.py", line 12, in <module>
+    from fastmcp import FastMCP
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\fastmcp\__init__.py", line 23, in <module>
+    from fastmcp.server.server import FastMCP
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\fastmcp\server\__init__.py", line 3, in <module>
+    from .context import Context
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\fastmcp\server\context.py", line 43, in <module>
+    from fastmcp.server.server import FastMCP, StateValue
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\fastmcp\server\server.py", line 27, in <module>
+    from key_value.aio.adapters.pydantic import PydanticAdapter
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\key_value\aio\__init__.py", line 3, in <module>
+    from beartype import (
+    ...<2 lines>...
+    )
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\__init__.py", line 158, in <module>
+    from beartype._decor.decormain import (
+        beartype as beartype,
+    )
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\_decor\decormain.py", line 127, in <module>
+    from beartype._decor.decorcache import beartype as beartype
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\_decor\decorcache.py", line 38, in <module>
+    from beartype._decor.decorcore import beartype_object
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\_decor\decorcore.py", line 26, in <module>
+    from beartype._decor._nontype.decornontype import beartype_nontype
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\_decor\_nontype\decornontype.py", line 24, in <module>
+    from beartype._check.metadata.metadecor import (
+    ...<2 lines>...
+    )
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\_check\metadata\metadecor.py", line 24, in <module>
+    from beartype._check.forward.fwdscope import BeartypeForwardScope
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\_check\forward\fwdscope.py", line 38, in <module>
+    from beartype._check.forward.reference.fwdrefabc import (
+        _BeartypeForwardRefIndexableABC)
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\_check\forward\reference\fwdrefabc.py", line 25, in <module>
+    from beartype._check.forward.reference.fwdrefmeta import BeartypeForwardRefMeta
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\_check\forward\reference\fwdrefmeta.py", line 22, in <module>
+    from beartype._util.hint.pep.proposal.pep484585.generic.pep484585genget import (
+        get_hint_pep484585_generic_type)
+  File "C:\Users\lab\git\LaserScanning-Microscope\.venv\Lib\site-packages\beartype\_util\hint\pep\proposal\pep484585\generic\pep484585genget.py", line 46, in <module>
+    from beartype._util.kind.sequence.utilseqmake import make_stack
+KeyboardInterrupt
+

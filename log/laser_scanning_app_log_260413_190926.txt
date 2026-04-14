@@ -1,0 +1,16 @@
+2026-04-13T19:09:28|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\laser_scanning_app.py", line 50, in <module>
+    app = LaserScanningApp(sys.argv)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 94, in __init__
+    self._setup_ui_mdi_area()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 252, in _setup_ui_mdi_area
+    ui = self.load_measure_ui(measure)
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\base_app\base_microscope_app.py", line 389, in load_measure_ui
+    measure.setup_figure()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd_readout.py", line 179, in setup_figure
+    self.ui.show_ccd_settings_checkBox.setCheckState(False) #hide first.
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+TypeError: setCheckState(self, state: Qt.CheckState): argument 1 has unexpected type 'bool'
+

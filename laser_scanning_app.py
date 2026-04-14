@@ -35,6 +35,11 @@ class LaserScanningApp(BaseMicroscopeApp):
         from ScopeFoundryHW.andor_camera.andor_ccd import AndorCCDHW
         self.add_hardware(AndorCCDHW(self))
 
+        from ScopeFoundryHW.andor_camera.andor_ccd_readout import AndorCCDReadoutMeasure
+        self.add_measurement(AndorCCDReadoutMeasure(self))
+        from ScopeFoundryHW.andor_camera.andor_ccd_kinetic_measure import AndorCCDKineticMeasure
+        self.add_measurement(AndorCCDKineticMeasure(self))
+
 
         
 
