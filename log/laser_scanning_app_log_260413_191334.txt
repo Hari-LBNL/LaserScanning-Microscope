@@ -24,3 +24,44 @@ AttributeError: 'int' object has no attribute 'splitlines'
 2026-04-13T19:17:31|WARNING|GitSessionManagerHW|Measurement andor_ccd_readout starting without an active session
 2026-04-13T19:17:40|WARNING|GitSessionManagerHW|Measurement andor_ccd_readout starting without an active session
 2026-04-13T19:17:51|WARNING|GitSessionManagerHW|Measurement andor_ccd_readout starting without an active session
+2026-04-13T19:18:17|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 128, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 124, in enable_connection
+    self.disconnect()
+    ~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd.py", line 345, in disconnect
+    self.is_connected = False
+    ^^^^^^^^^^^^^^^^^
+AttributeError: property 'is_connected' of 'AndorCCDHW' object has no setter
+
+2026-04-13T19:18:37|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 128, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 124, in enable_connection
+    self.disconnect()
+    ~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd.py", line 345, in disconnect
+    self.is_connected = False
+    ^^^^^^^^^^^^^^^^^
+AttributeError: property 'is_connected' of 'AndorCCDHW' object has no setter
+
+2026-04-15T13:25:11|WARNING|GitSessionManagerHW|Measurement andor_ccd_readout starting without an active session
+2026-04-15T13:31:19|INFO|LaserScanningApp|on_close
+2026-04-15T13:31:19|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-15T13:31:19|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-15T13:31:19|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-15T13:31:19|INFO|LaserScanningApp|disconnecting asi_stage
+2026-04-15T13:31:19|INFO|LaserScanningApp|disconnecting acton_spectrometer
+2026-04-15T13:31:19|INFO|LaserScanningApp|disconnecting andor_ccd
+2026-04-15T13:31:20|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 128, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 124, in enable_connection
+    self.disconnect()
+    ~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd.py", line 345, in disconnect
+    self.is_connected = False
+    ^^^^^^^^^^^^^^^^^
+AttributeError: property 'is_connected' of 'AndorCCDHW' object has no setter
+
