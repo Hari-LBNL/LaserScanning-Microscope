@@ -9,10 +9,9 @@ class MCLMicrostageHW(HardwareComponent):
     name = 'mcl_microstage'
 
     def __init__(self, app, debug=False, name=None,
-                 enable_x=True, enable_y=True, enable_z=False):
+                 enable_x=True, enable_y=True):
         self.enable_x = enable_x
         self.enable_y = enable_y
-        self.enable_z = enable_z
         HardwareComponent.__init__(self, app, debug=debug, name=name)
 
     def setup(self):
@@ -26,10 +25,6 @@ class MCLMicrostageHW(HardwareComponent):
         if self.enable_y:
             self.settings.New('y_position', ro=True, **pos_kwargs)
             self.settings.New('y_target',   ro=False, **pos_kwargs)
-
-        if self.enable_z:
-            self.settings.New('z_position', ro=True, **pos_kwargs)
-            self.settings.New('z_target',   ro=False, **pos_kwargs)
 
         self.settings.New('velocity', dtype=float, initial=2.0,
                           unit='mm/s', spinbox_decimals=2,
@@ -86,13 +81,6 @@ class MCLMicrostageHW(HardwareComponent):
             S.y_target.connect_to_hardware(
                 write_func=lambda v: self.stage.move_y(v, S['velocity']))
 
-        if self.enable_z:
-            S.z_position.connect_to_hardware(read_func=self.stage.read_pos_z)
-            S.z_position.read_from_hardware()
-            S['z_target'] = S['z_position']
-            S.z_target.connect_to_hardware(
-                write_func=lambda v: self.stage.move_z(v, S['velocity']))
-
     def disconnect(self):
         self.settings.disconnect_all_from_hardware()
         if hasattr(self, 'stage'):
@@ -107,8 +95,6 @@ class MCLMicrostageHW(HardwareComponent):
             self.settings.x_position.read_from_hardware()
         if self.enable_y:
             self.settings.y_position.read_from_hardware()
-        if self.enable_z:
-            self.settings.z_position.read_from_hardware()
 
     def stop(self):
         self.stage.stop()
@@ -119,8 +105,6 @@ class MCLMicrostageHW(HardwareComponent):
             self.settings['x_target'] = 0.0
         if self.enable_y:
             self.settings['y_target'] = 0.0
-        if self.enable_z:
-            self.settings['z_target'] = 0.0
 
     # ------------------------------------------------------------------
     # Convenience methods for use from measurements / MCP
@@ -137,3 +121,16 @@ class MCLMicrostageHW(HardwareComponent):
 
     def move_rel_y(self, delta):
         self.stage.move_rel_y(delta, self.settings['velocity'])
+
+    def is_busy_xy(self):
+        return self.stage.is_moving()
+
+    def correct_backlash(self, backlash):
+        self.move_rel_x(-backlash)
+        self.move_rel_y(-backlash)
+        while self.is_busy_xy():
+            time.sleep(0.03)
+        self.move_rel_x(backlash)
+        self.move_rel_y(backlash)
+        while self.is_busy_xy():
+            time.sleep(0.03)

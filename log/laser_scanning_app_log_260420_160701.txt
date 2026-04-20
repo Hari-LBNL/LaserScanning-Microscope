@@ -1,0 +1,7 @@
+2026-04-20T16:07:16|INFO|LaserScanningApp|on_close
+2026-04-20T16:07:16|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-20T16:07:16|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-20T16:07:16|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-20T16:07:16|INFO|LaserScanningApp|disconnecting asi_stage
+2026-04-20T16:07:16|INFO|LaserScanningApp|disconnecting acton_spectrometer
+2026-04-20T16:07:16|INFO|LaserScanningApp|disconnecting andor_ccd

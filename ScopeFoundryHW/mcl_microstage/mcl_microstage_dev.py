@@ -21,8 +21,10 @@ class MCLMicrostage:
     encoder_x / encoder_y: encoder indices (0-based) mapped to X and Y.
     """
 
-    def __init__(self, serial_num=None, debug=False, axis_x=1, axis_y=2,
-                 encoder_x=0, encoder_y=1, invert_x=False, invert_y=False):
+    def __init__(self, serial_num=None, debug=False,
+                 axis_x=1, axis_y=2,
+                 encoder_x=0, encoder_y=1,
+                 invert_x=False, invert_y=False):
         self.debug = debug
         self.axis_x = axis_x
         self.axis_y = axis_y
@@ -45,8 +47,11 @@ class MCLMicrostage:
 
         # Query velocity range per axis
         def _axis_vel_range(axis):
-            _, _, max_v, _, _, min_v, _ = self._dev.axis_information(axis, self.handle)
-            return (min_v if min_v > 0 else 0.001, max_v)
+            try:
+                _, _, max_v, _, _, min_v, _ = self._dev.axis_information(axis, self.handle)
+                return (min_v if min_v > 0 else 0.001, max_v)
+            except Exception:
+                return (0.001, 10.0)
 
         self._x_min_vel, self._x_max_vel = _axis_vel_range(self.axis_x)
         self._y_min_vel, self._y_max_vel = _axis_vel_range(self.axis_y)
