@@ -1,0 +1,41 @@
+2026-04-20T17:05:40|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 113, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 101, in enable_connection
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\acton_spec\acton_spec.py", line 65, in connect
+    self.acton_spectrometer = ActonSpectrometer(port=self.settings['port'],
+                              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                echo=self.settings['echo'],
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                debug=self.settings['debug_mode'],
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                dummy=False)
+                                                ^^^^^^^^^^^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\acton_spec\acton_spec_interface.py", line 26, in __init__
+    self.read_grating_info()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\acton_spec\acton_spec_interface.py", line 72, in read_grating_info
+    gratings = grating_string.splitlines()[1:-1] # needed for echo
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'splitlines'
+
+2026-04-20T17:11:24|INFO|LaserScanningApp|on_close
+2026-04-20T17:11:24|INFO|LaserScanningApp|disconnecting mcp_server
+2026-04-20T17:11:24|INFO|LaserScanningApp|disconnecting git_session_manager
+2026-04-20T17:11:24|INFO|LaserScanningApp|disconnecting mcl_microstage
+2026-04-20T17:11:24|INFO|LaserScanningApp|disconnecting asi_stage
+2026-04-20T17:11:24|INFO|LaserScanningApp|disconnecting acton_spectrometer
+2026-04-20T17:11:24|INFO|LaserScanningApp|disconnecting andor_ccd
+2026-04-20T17:11:26|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 128, in enable_connection
+    raise err
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundry\hardware.py", line 124, in enable_connection
+    self.disconnect()
+    ~~~~~~~~~~~~~~~^^
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\andor_camera\andor_ccd.py", line 345, in disconnect
+    self.is_connected = False
+    ^^^^^^^^^^^^^^^^^
+AttributeError: property 'is_connected' of 'AndorCCDHW' object has no setter
+

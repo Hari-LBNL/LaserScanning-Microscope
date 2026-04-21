@@ -12,6 +12,7 @@ class MCLMicrostage2DScan(BaseRaster2DSlowScan):
                                       h_unit="mm", v_unit="mm", circ_roi_size=0.05)
 
     def setup(self):
+        self.settings.New('debug', dtype=bool, initial=False)
         BaseRaster2DSlowScan.setup(self)
         self.stage = self.app.hardware['mcl_microstage']
 
@@ -27,7 +28,7 @@ class MCLMicrostage2DScan(BaseRaster2DSlowScan):
         self.stage.correct_backlash(0.01)
 
     def move_position_start(self, h, v):
-        if self.debug_mode.val:
+        if self.settings['debug']:
             print(f'{self.name} start scan, moving to x={h:.4f}, y={v:.4f}')
         self.stage.settings["x_target"] = h
         self.stage.settings["y_target"] = v
@@ -36,7 +37,7 @@ class MCLMicrostage2DScan(BaseRaster2DSlowScan):
         self.stage.correct_backlash(0.01)
 
     def move_position_slow(self, h, v, dh, dv):
-        if self.debug_mode.val:
+        if self.settings['debug']:
             print(f'{self.name} new line, moving to x={h:.4f}, y={v:.4f}')
         # Backlash correction integrated into the line start
         self.stage.settings["x_target"] = h - 0.01

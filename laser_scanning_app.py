@@ -24,10 +24,10 @@ class LaserScanningApp(BaseMicroscopeApp):
         from ScopeFoundryHW.mcl_microstage.mcl_microstage_control_measure import MCLMicrostageControlMeasure
         self.add_measurement(MCLMicrostageControlMeasure(self))
 
-        from ScopeFoundryHW.asi_stage.asi_stage_hw import ASIStageHW
-        asi_stage = self.add_hardware(ASIStageHW(self,invert_x=True, invert_y = True,enable_z=True))
-        from ScopeFoundryHW.asi_stage.asi_stage_control_measure import ASIStageControlMeasure
-        asi_control = self.add_measurement(ASIStageControlMeasure(self))
+        #from ScopeFoundryHW.asi_stage.asi_stage_hw import ASIStageHW
+        #asi_stage = self.add_hardware(ASIStageHW(self,invert_x=True, invert_y = True,enable_z=True))
+        #from ScopeFoundryHW.asi_stage.asi_stage_control_measure import ASIStageControlMeasure
+        #asi_control = self.add_measurement(ASIStageControlMeasure(self))
 
         from ScopeFoundryHW.acton_spec.acton_spec import ActonSpectrometerHW
         self.add_hardware(ActonSpectrometerHW(self))
@@ -37,8 +37,15 @@ class LaserScanningApp(BaseMicroscopeApp):
 
         from ScopeFoundryHW.andor_camera.andor_ccd_readout import AndorCCDReadoutMeasure
         self.add_measurement(AndorCCDReadoutMeasure(self))
-        from ScopeFoundryHW.andor_camera.andor_ccd_kinetic_measure import AndorCCDKineticMeasure
-        self.add_measurement(AndorCCDKineticMeasure(self))
+        #from ScopeFoundryHW.andor_camera.andor_ccd_kinetic_measure import AndorCCDKineticMeasure
+        #self.add_measurement(AndorCCDKineticMeasure(self))
+
+        #from ScopeFoundryHW.mcl_microstage.mcl_microstage_raster import MCLMicrostage2DScan, MCLMicrostageDelay2DScan
+        #self.add_measurement(MCLMicrostage2DScan(self))
+        #self.add_measurement(MCLMicrostageDelay2DScan(self))
+
+        from ScopeFoundryHW.mcl_microstage.mcl_andor_hyperspec_raster import MCLAndorHyperSpec2DScan
+        self.add_measurement(MCLAndorHyperSpec2DScan(self))
 
 
         
