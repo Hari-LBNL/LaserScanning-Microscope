@@ -16,3 +16,9 @@
 [submodule "ScopeFoundryHW/andor_camera"]
 	path = ScopeFoundryHW/andor_camera
 	url = https://github.com/ScopeFoundry/HW_andor_camera
+[submodule "ScopeFoundryHW/picoharp"]
+	path = ScopeFoundryHW/picoharp
+	url = https://github.com/ScopeFoundry/HW_picoharp
+[submodule "ScopeFoundryHW/toupcam"]
+	path = ScopeFoundryHW/toupcam
+	url = https://github.com/ScopeFoundry/HW_toupcam
