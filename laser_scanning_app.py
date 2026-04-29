@@ -24,6 +24,10 @@ class LaserScanningApp(BaseMicroscopeApp):
         from ScopeFoundryHW.mcl_microstage.mcl_microstage_control_measure import MCLMicrostageControlMeasure
         self.add_measurement(MCLMicrostageControlMeasure(self))
 
+        from ScopeFoundryHW.toupcam import  ToupCamHW, ToupCamLiveMeasure
+        self.add_hardware(ToupCamHW(self))
+        self.add_measurement(ToupCamLiveMeasure(self))
+
         #from ScopeFoundryHW.asi_stage.asi_stage_hw import ASIStageHW
         #asi_stage = self.add_hardware(ASIStageHW(self,invert_x=True, invert_y = True,enable_z=True))
         #from ScopeFoundryHW.asi_stage.asi_stage_control_measure import ASIStageControlMeasure
@@ -37,6 +41,9 @@ class LaserScanningApp(BaseMicroscopeApp):
 
         from ScopeFoundryHW.andor_camera.andor_ccd_readout import AndorCCDReadoutMeasure
         self.add_measurement(AndorCCDReadoutMeasure(self))
+
+        from ScopeFoundryHW.picoharp.picoharp import PicoHarpHW
+        self.add_hardware(PicoHarpHW(self))
         #from ScopeFoundryHW.andor_camera.andor_ccd_kinetic_measure import AndorCCDKineticMeasure
         #self.add_measurement(AndorCCDKineticMeasure(self))
 
@@ -46,6 +53,9 @@ class LaserScanningApp(BaseMicroscopeApp):
 
         from ScopeFoundryHW.mcl_microstage.mcl_andor_hyperspec_raster import MCLAndorHyperSpec2DScan
         self.add_measurement(MCLAndorHyperSpec2DScan(self))
+
+        from ScopeFoundryHW.mcl_microstage.mcl_apd_2dslowscan import MCL_APD_2Dslowscan
+        self.add_measurement(MCL_APD_2Dslowscan(self))
 
 
         

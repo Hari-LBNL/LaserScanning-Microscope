@@ -22,3 +22,9 @@
 [submodule "ScopeFoundryHW/toupcam"]
 	path = ScopeFoundryHW/toupcam
 	url = https://github.com/ScopeFoundry/HW_toupcam
+[submodule "ScopeFoundryHW/ni_daq"]
+	path = ScopeFoundryHW/ni_daq
+	url = https://github.com/ScopeFoundry/HW_ni_daq
+[submodule "ScopeFoundryHW/sync_raster_daq"]
+	path = ScopeFoundryHW/sync_raster_daq
+	url = https://github.com/UBene/HW_sync_raster_daq

@@ -1,0 +1,48 @@
+2026-04-21T16:15:04|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 90, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-21T16:15:13|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 90, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-21T16:15:14|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 90, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-21T16:15:16|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 90, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-21T16:16:05|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 90, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-21T16:16:42|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 90, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-21T16:16:47|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 90, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+
+2026-04-21T16:18:38|CRITICAL|root|Unhandled exception: Traceback (most recent call last):
+  File "c:\Users\lab\git\LaserScanning-Microscope\ScopeFoundryHW\mcl_microstage\mcl_microstage_hw.py", line 90, in _on_update_timer
+    def _on_update_timer(self):
+    
+KeyboardInterrupt
+

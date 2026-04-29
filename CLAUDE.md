@@ -22,7 +22,7 @@ uv run python laser_scanning_app.py
 python laser_scanning_app.py
 ```
 
-Key dependencies: `fastmcp`, `PyQt6`, `pyqtgraph`, `h5py`, `pipython` (PI stage), `pyvisa`, `pyserial`.
+Key dependencies: `fastmcp`, `PyQt6`, `pyqtgraph`, `h5py`, `pipython` (PI stage), `pyvisa`, `pyserial`, `numpy`, `matplotlib`.
 
 ## Submodules
 
@@ -47,6 +47,9 @@ python ScopeFoundryHW/mcp_server/test_mcp_tools.py
 # Test apps (require hardware or simulator)
 python ScopeFoundryHW/mcp_server/mcp_test_app.py
 python ScopeFoundryHW/session_manager/test_app.py
+python ScopeFoundryHW/toupcam/test_app.py
+python ScopeFoundryHW/asi_stage/asi_stage_test_app.py
+python ScopeFoundryHW/mcl_microstage/mcl_microstage_test_app.py
 ```
 
 ## Architecture
@@ -59,6 +62,21 @@ python ScopeFoundryHW/session_manager/test_app.py
 self.add_hardware_component(MCPServerHardware(self))  # instantiated
 self.add_hardware(GitSessionManagerHW)                 # class only
 ```
+
+### Active Hardware & Measurements (laser_scanning_app.py)
+
+- **Hardware**: 
+  - `MCPServerHardware`: Provides MCP interface.
+  - `GitSessionManagerHW`: Manages experimental sessions.
+  - `MCLMicrostageHW`: Mad City Labs microstage.
+  - `ToupCamHW`: ToupCam camera interface.
+  - `ActonSpectrometerHW`: Acton spectrometer.
+  - `AndorCCDHW`: Andor CCD camera.
+- **Measurements**:
+  - `MCLMicrostageControlMeasure`: Direct stage control.
+  - `ToupCamLiveMeasure`: Live camera feed.
+  - `AndorCCDReadoutMeasure`: CCD data acquisition.
+  - `MCLAndorHyperSpec2DScan`: Hyperspectral 2D raster scan combining MCL stage and Andor CCD.
 
 ### ScopeFoundry Framework Concepts
 
@@ -76,39 +94,34 @@ Runs a **FastMCP** server on `http://localhost:8000/mcp` in its own QThread (`MC
 - `execute_python` — runs code in the MCP thread (no GUI access)
 - `execute_python_gui` — runs code in the GUI thread via Qt signal/slot; all context vars (`app`, `hardware`, `measurements`, `settings`) are available in both
 
-**Thread safety**: All Qt widget operations must go through `execute_python_gui`. The MCP thread cannot directly touch Qt objects.
-
-Claude Code connects to the MCP server by placing an `.mcp.json` at the project root (see `ScopeFoundryHW/mcp_server/.mcp.json` for the template pointing to `http://localhost:8000/mcp`).
-
 ### Git Session Manager (`ScopeFoundryHW/session_manager/git_session_manager_hw.py`)
 
-Manages experimental sessions as git branches. Branch format: `session-{YYMMDD-HHMMSS}-{session_name}` (e.g., `session-260403-142301-laser-cal`). On session start:
+Manages experimental sessions as git branches. Branch format: `session-{YYMMDD-HHMMSS}-{session_name}`. On session start:
 
-1. Creates and checks out the new branch
-2. Commits the current state (or an empty commit if clean)
-3. Creates an annotated git tag named `start-{branch_name}`
+1. Creates and checks out the new branch.
+2. Commits the current state.
+3. Creates an annotated git tag `start-{branch_name}`.
 
-The `SESSION_PREFIX = "session"` constant controls the branch prefix. A session is considered active whenever the current branch starts with `session-`.
+## Data Storage
 
-**Auto-commit hook** (`ScopeFoundryHW/session_manager/llm_git_commit_hook.py`): A Claude Code `PostToolUse` hook. When on a `session-*` branch, it automatically:
-- Commits all staged changes with a message containing the LLM prompt/response summary
-- Copies the Claude transcript to `llm-sessions/{branch}/claude_transcript/`
-- Converts the transcript to markdown at `llm-sessions/{branch}/conversation-*_{full,messages}.md`
+Measurements write HDF5 files to the `data/` directory. Logs go to `log/`. LLM session transcripts go to `llm-sessions/`.
 
-The `manage_submodules` setting controls whether session branches are also created in submodules.
+## Code Style & Guidelines
 
-### Data Storage
-
-Measurements write HDF5 files (via h5py) to the `data/` directory. Logs go to `log/`. LLM session transcripts go to `llm-sessions/`.
+- **Naming**: Use `CamelCase` for classes (Hardware, Measurement), `snake_case` for variables, methods, and file names.
+- **Typing**: Use type hints for function arguments and return values where possible.
+- **Hardware/Measurement Registration**: Register hardware in `setup()` of the app.
+- **Thread Safety**: All Qt widget operations in MCP server must use `execute_python_gui`.
+- **Documentation**: Keep `CLAUDE.md` and `MEMORY.md` updated with major architectural changes or new hardware additions.
 
 ## Adding New Hardware
 
-1. Create `ScopeFoundryHW/<device_name>/<device_name>_hw.py` subclassing `HardwareComponent`
-2. Implement `setup()` (call `self.settings.New(...)` for each setting, `self.add_operation(...)` for GUI buttons), `connect()`, `disconnect()`
-3. Register in `laser_scanning_app.py`: `self.add_hardware(MyHardware)` or `self.add_hardware_component(MyHardware(self))`
+1. Create `ScopeFoundryHW/<device_name>/<device_name>_hw.py` subclassing `HardwareComponent`.
+2. Implement `setup()` (call `self.settings.New(...)`), `connect()`, `disconnect()`.
+3. Register in `laser_scanning_app.py`.
 
 ## Adding New Measurements
 
-1. Create a measurement file subclassing `Measurement`
-2. Implement `setup()` (add logged quantities, connect widgets) and `run()` (measurement loop checking `self.interrupt_measurement_called`)
-3. Register in `laser_scanning_app.py`: `self.add_measurement(MyMeasurement)`
+1. Create a measurement file subclassing `Measurement`.
+2. Implement `setup()` and `run()` (check `self.interrupt_measurement_called`).
+3. Register in `laser_scanning_app.py`.
