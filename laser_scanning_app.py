@@ -57,6 +57,12 @@ class LaserScanningApp(BaseMicroscopeApp):
         from ScopeFoundryHW.mcl_microstage.mcl_apd_2dslowscan import MCL_APD_2Dslowscan
         self.add_measurement(MCL_APD_2Dslowscan(self))
 
+        from ScopeFoundryHW.ni_daq.hw.ni_freq_counter_callback import NI_FreqCounterCallBackHW
+        self.add_hardware(NI_FreqCounterCallBackHW(self, name='apd_counter'))
+        from ScopeFoundryHW.apd_counter.measure.apd_optimizer import APDOptimizerMeasurement
+        self.add_measurement_component(APDOptimizerMeasurement(self))
+
+
 
         
 

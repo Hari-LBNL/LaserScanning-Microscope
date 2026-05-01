@@ -12,6 +12,7 @@ dependencies = [
     "jupyter>=1.1.1",
     "matplotlib>=3.10.8",
     "pipython>=2.11.0.6",
+    "pydaqmx>=1.4.7",
     "pyqt6>=6.11.0",
     "pyqtgraph>=0.14.0",
     "pyserial>=3.5",
